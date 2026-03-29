@@ -1,0 +1,3 @@
+-keep class org.opencv.** { *; }
+-keep class com.autoclicker.** { *; }
+-dontwarn org.opencv.**

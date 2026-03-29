@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Permission warnings -->
+        <TextView
+            android:id="@+id/tvAccessibilityWarning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFCC"
+            android:padding="12dp"
+            android:text="@string/accessibility_not_enabled"
+            android:textColor="#CC6600"
+            android:textSize="13sp"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvOverlayWarning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFCC"
+            android:padding="12dp"
+            android:text="@string/overlay_not_granted"
+            android:textColor="#CC6600"
+            android:textSize="13sp"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Target image card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Target Image"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <ImageView
+                    android:id="@+id/ivTargetPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerInside"
+                    android:background="#F0F0F0"
+                    android:layout_marginBottom="12dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPickImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_pick_image"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Settings card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Threshold -->
+                <TextView
+                    android:id="@+id/tvThresholdLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Match Threshold: 0.80"
+                    android:textSize="14sp"/>
+
+                <SeekBar
+                    android:id="@+id/seekThreshold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:progress="80"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Interval -->
+                <TextView
+                    android:id="@+id/tvIntervalLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Click Interval: 1000 ms"
+                    android:textSize="14sp"/>
+
+                <SeekBar
+                    android:id="@+id/seekInterval"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="9500"
+                    android:progress="500"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Max clicks -->
+                <TextView
+                    android:id="@+id/tvMaxClicksLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Max Clicks: 50"
+                    android:textSize="14sp"/>
+
+                <SeekBar
+                    android:id="@+id/seekMaxClicks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="199"
+                    android:progress="49"
+                    android:layout_marginBottom="4dp"/>
+
+                <!-- Stop on page change toggle -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Continue after page change"
+                        android:textSize="14sp"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchContinueOnChange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Status card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status_idle"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvClickCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clicks: 0"
+                    android:textSize="13sp"
+                    android:textColor="#888888"
+                    android:layout_marginTop="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvLastMatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last match: —"
+                    android:textSize="13sp"
+                    android:textColor="#888888"
+                    android:layout_marginTop="2dp"/>
+
+                <TextView
+                    android:id="@+id/tvPageChange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Page changes: 0"
+                    android:textSize="13sp"
+                    android:textColor="#888888"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Start/Stop buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_start"
+                android:layout_marginEnd="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_stop"
+                android:enabled="false"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

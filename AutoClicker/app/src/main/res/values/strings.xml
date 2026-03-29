@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AutoClicker</string>
+    <string name="accessibility_service_description">AutoClicker uses Accessibility Service to simulate taps on screen at detected target image locations.</string>
+    <string name="btn_start">▶ Start</string>
+    <string name="btn_stop">■ Stop</string>
+    <string name="btn_pick_image">Pick Target Image</string>
+    <string name="status_idle">Status: Idle</string>
+    <string name="status_running">Status: Running…</string>
+    <string name="status_no_image">No target image selected</string>
+    <string name="label_threshold">Match Threshold: </string>
+    <string name="label_interval">Click Interval (ms): </string>
+    <string name="label_max_clicks">Max Clicks: </string>
+    <string name="accessibility_not_enabled">⚠ Accessibility Service not enabled. Tap to enable.</string>
+    <string name="overlay_not_granted">⚠ Overlay permission not granted. Tap to grant.</string>
+</resources>
